@@ -1,0 +1,67 @@
+<div class="bg-green-600 px-6 shadow-2 flex relative lg:static" style="min-height: 75px;">
+  <a pstyleclass="#profile-10" enterclass="hidden" enteractiveclass="scalein" leavetoclass="hidden"
+    (click)="displauluser()" leaveactiveclass="fadeout"
+    class="p-element cursor-pointer flex p-3 align-items-center hover:bg-green-600 transition-colors transition-duration-150 relative select-none"><img
+      src="https://www.primefaces.org/primeblocks-ng/assets/images/blocks/avatars/circle/avatar-f-6.png" class="lg:mr-3"
+      style="width: 40px; height: 40px;">
+    <div class="hidden lg:block"><span class="text-green-100 block mb-1 text-lg font-medium white-space-nowrap">Kristin
+        Watson</span>
+      <p class="m-0 text-green-200">Manager</p>
+    </div><i class="pi pi-chevron-down text-green-200 ml-3 hidden lg:block"></i>
+    <div id="profile-10"
+      class="absolute left-0 top-100 shadow-2 bg-green-600 border-round-bottom w-15rem lg:w-full origin-top  z-1"
+      [ngClass]="{ hidden: hiddenul }">
+      <ul class="list-none m-0 p-3">
+        <li><a pripple="" routerLink="/Application/Main/profile"
+            class="p-ripple p-element flex p-3 align-items-center text-green-100 hover:text-green-50 hover:bg-green-600 transition-colors transition-duration-150 border-round"><i
+              class="pi pi-user mr-2"></i>
+            <span class="font-medium">Profile</span>
+            <span class="p-ink">
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a pripple="" (click)="disconnect()" class="p-ripple p-element flex p-3 align-items-center text-green-100 hover:text-green-50 hover:bg-green-600 transition-colors transition-duration-150 border-round">
+            <i class="pi pi-sign-out mr-2"></i>
+            <span class="font-medium" >Sign Out</span>
+            <span class="p-ink"></span></a>
+        </li>
+      </ul>
+    </div>
+  </a>
+  <div class="flex flex-1 px-3 hidden md:inline-flex ">
+    <span class="flex align-items-center"><i class="pi pi-search text-green-100 hidden md:inline-flex"></i>
+    </span>
+    <input type="text"
+      class="appearance-none border-none flex-auto bg-transparent outline-none p-component text-green-300 pl-3 hidden md:inline-flex">
+  </div>
+  <div class="flex ml-5">
+    <a enterclass="hidden" leavetoclass="hidden" (click)="displauluser2()"
+      class="p-ripple p-element cursor-pointer inline-flex align-items-center justify-content-center lg:hidden text-white"><i
+        class="pi pi-bars text-4xl"></i><span class="p-ink"></span></a>
+    <div class="lg:block  absolute lg:static left-0 top-100 z-1 shadow-2 lg:shadow-none w-full lg:w-auto bg-green-600"
+      [ngClass]="{ hidden: hiddenul2 }">
+      <ul class="h-full list-none p-0 m-0 flex select-none flex-column lg:flex-row">
+        <li class=" inline-flex lg:hidden ">
+          <a
+            class="  p-ripple p-element h-full flex px-6 py-3 lg:px-3 lg:py-0 align-items-center text-green-100 hover:text-green-50 hover:bg-green-600 font-medium cursor-pointer transition-colors transition-duration-150">
+            <i class="pi pi-search lg:text-2xl mr-2 lg:mr-0 "> </i>
+            <input type="text"
+              class="appearance-none border-none flex-auto bg-transparent outline-none p-component text-green-300 pl-3 ">
+            <span class="p-ink"></span>
+          </a>
+        </li>
+        <li><a
+            class="p-ripple p-element h-full flex px-6 py-3 lg:px-3 lg:py-0 align-items-center text-green-100 hover:text-green-50 hover:bg-green-600 font-medium cursor-pointer transition-colors transition-duration-150"><i
+              class="pi pi-inbox lg:text-2xl mr-2 lg:mr-0"></i><span
+              class="block lg:hidden font-medium">Inbox</span><span class="p-ink"></span></a></li>
+        <li><a
+            class="p-ripple p-element h-full flex px-6 py-3 lg:px-3 lg:py-0 align-items-center text-green-100 hover:text-green-50 hover:bg-green-600 font-medium cursor-pointer transition-colors transition-duration-150"><i
+              pbadge="" severity="danger" class="p-element pi pi-bell lg:text-2xl mr-2 lg:mr-0 p-overlay-badge"><span
+                id="pr_id_7_badge" class="p-badge p-component p-badge-danger p-badge-dot"></span></i><span
+              class="block lg:hidden font-medium">Notifications</span><span class="p-ink"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

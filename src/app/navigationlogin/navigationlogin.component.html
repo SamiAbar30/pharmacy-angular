@@ -1,0 +1,77 @@
+
+  <div class="surface-overlay py-3 px-6 shadow-2 flex align-items-center justify-content-between relative lg:static">
+    <img src="https://www.primefaces.org/primeblocks-ng/assets/images/blocks/logos/hyper-700.svg" alt="Image" height="50" class="block lg:hidden">
+    <a (click)="displauluser2()"  class="p-ripple p-element cursor-pointer block lg:hidden text-700">
+      <i class="pi pi-bars text-4xl"></i>
+      <span class="p-ink">
+      </span>
+      </a>
+    <div
+      class="align-items-center flex-grow-1  lg:flex absolute lg:static w-full surface-overlay left-0 top-100 px-6 lg:px-0 z-2 shadow-2 lg:shadow-none"  [ngClass]="{ hidden: hiddenul2 }">
+      <ul
+        class="list-none p-0 m-0 flex lg:align-items-center text-900 select-none flex-column lg:flex-row cursor-pointer lg:w-4">
+        <li class="relative">
+          <a pripple="" pstyleclass="@next" enterclass="hidden" enteractiveclass="scalein" (click)="displauluser()"
+            leavetoclass="hidden" leaveactiveclass="fadeout"
+            class="p-ripple p-element flex px-0 lg:px-5 py-3 align-items-center hover:text-green-600 font-medium transition-colors transition-duration-150">
+            <span>Products</span>
+            <i class="pi pi-chevron-down ml-auto lg:ml-3"></i>
+              <span class="p-ink"></span>
+            </a>
+          <ul
+            class="list-none p-0 m-0 border-round shadow-0 lg:shadow-2 lg:absolute surface-overlay  origin-top w-full lg:w-15rem" [ngClass]="{ hidden: hiddenul }" >
+            <li><a pripple=""
+                class="p-ripple p-element flex p-3 align-items-center hover:surface-50 transition-colors transition-duration-150"><i
+                  class="pi pi-list text-2xl mr-2 text-green-600"></i><span>Features</span><span
+                  class="p-ink"></span></a></li>
+            <li><a pripple=""
+                class="p-ripple p-element flex p-3 align-items-center hover:surface-50 transition-colors transition-duration-150"><i
+                  class="pi pi-shield text-2xl mr-2 text-green-600"></i><span>Solutions</span><span
+                  class="p-ink"></span></a></li>
+            <li><a pripple=""
+                class="p-ripple p-element flex p-3 align-items-center hover:surface-50 transition-colors transition-duration-150"><i
+                  class="pi pi-users text-2xl mr-2 text-green-600"></i><span>Customers</span><span
+                  class="p-ink"></span></a></li>
+            <li class="relative"><a pripple="" pstyleclass="@next" enterclass="hidden" enteractiveclass="scalein"
+                leavetoclass="hidden" leaveactiveclass="fadeout"
+                class="p-ripple p-element flex p-3 align-items-center hover:surface-50 transition-colors transition-duration-150"><i
+                  class="pi pi-question-circle text-2xl mr-2 text-green-600"></i><span>Support</span><i
+                  class="pi pi-chevron-down ml-auto lg:-rotate-90"></i><span class="p-ink"></span></a>
+              <ul
+                class="list-none py-3 pl-3 pr-0 m-0 lg:px-0 lg:py-0 border-round shadow-0 lg:shadow-2 lg:absolute surface-overlay hidden origin-top w-full lg:w-15rem cursor-pointer left-100 top-0">
+                <li><a pripple=""
+                    class="p-ripple p-element flex p-3 align-items-center hover:surface-50 transition-colors transition-duration-150"><i
+                      class="pi pi-cloud mr-2"></i><span class="font-medium">Help Center</span><span
+                      class="p-ink"></span></a></li>
+                <li class="relative"><a pripple=""
+                    class="p-ripple p-element flex p-3 align-items-center hover:surface-50 transition-colors transition-duration-150"><i
+                      class="pi pi-question-circle mr-2"></i><span class="font-medium">Faq</span><span
+                      class="p-ink"></span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a pripple=""
+            class="p-ripple p-element flex px-0 lg:px-5 py-3 hover:text-green-600 font-medium transition-colors transition-duration-150"><span>Corporate</span><span
+              class="p-ink">
+            </span>
+            </a>
+          </li>
+      </ul>
+      <div class="w-4 text-center hidden lg:block"><img src="https://www.primefaces.org/primeblocks-ng/assets/images/blocks/logos/hyper-700.svg" alt="Image"
+          height="50"></div>
+      <div
+        class="flex justify-content-end lg:text-right lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0 lg:w-4">
+        <button pbutton="" pripple="" label="Login"  routerLink='/Login'
+          class="p-ripple p-element font-bold p-button-outlined p-button-rounded p-button p-component"><span
+            class="p-ink"></span><span class="p-button-label">Login</span>
+          </button>
+          <button pbutton="" pripple=""  routerLink='/sing'
+          label="Register" class="p-ripple p-element ml-3 font-bold p-button-rounded p-button p-component"><span
+            class="p-ink"></span><span class="p-button-label">Register</span>
+          </button>
+        </div>
+    </div>
+  </div>
+

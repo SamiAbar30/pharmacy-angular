@@ -1,0 +1,30 @@
+<div *ngFor="let zon of Zone">
+  <div *ngIf="statut==zon.value.staut_pharmacie" class="flex card-container flex shadow-2 surface-card border-round flex-column xl:flex-row m-3 overflow-hidden"  >
+    <img src="{{zon.value.img_pharmacie}}" alt="Image"
+      class="border-round-left" style="max-height: 234px;">
+
+    <div class="flex-grow-1 flex align-items-center  ">
+      <div class="p-4">
+
+        <div class="text-900 text-xl mb-3 font-medium">{{zon.value.name_pharmacie}}</div>
+        <p class="m-0 mb-3">{{zon.value.adresse_pharmacie}}</p>
+        <div class="text-yellow-500 mb-4"  >
+
+
+            <i class="pi pi-star-fill mr-1" *ngIf="zon.value.stars>=1" ></i>
+            <i class="pi pi-star-fill mr-1"*ngIf="zon.value.stars>=2" ></i>
+            <i class="pi pi-star-fill mr-1"*ngIf="zon.value.stars>=3" ></i>
+            <i class="pi pi-star-fill mr-1" *ngIf="zon.value.stars>=4"></i>
+            <i class="pi pi-star-fill mr-1"*ngIf="zon.value.stars>=5" ></i>
+
+        </div>
+      </div>
+    </div>
+    <div class="flex align-items-center justify-content-center font-bold text-white m-2 border-round">
+      <div class="flex align-items-center justify-content-center ">
+        <button pButton pRipple type="button" icon="pi pi-arrow-right" class="p-button-rounded"  [routerLink]="['/Application/Main/detailpharmacie/',zon.key]"></button>
+      </div>
+    </div>
+  </div>
+
+</div>

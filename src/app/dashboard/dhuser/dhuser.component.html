@@ -1,0 +1,66 @@
+<div class="card">
+  <p-toolbar styleClass="mb-4">
+    <ng-template pTemplate="left">
+      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button>
+
+    </ng-template>
+
+    <ng-template pTemplate="right">
+      <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import"
+        class="mr-2 inline-block"></p-fileUpload>
+      <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
+    </ng-template>
+  </p-toolbar>
+
+  <p-table #dt [value]="users" [rows]="10" [paginator]="true"
+    [globalFilterFields]="['nickname','email','admin','status']" responsiveLayout="scroll"
+    [(selection)]="selectedusers" [rowHover]="true" dataKey="id"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+    <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+        <h5 class="m-0">Manage users</h5>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+            placeholder="Search..." />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="nickname">nickname <p-sortIcon field="nickname"></p-sortIcon>
+        </th>
+        <th pSortableColumn="email">email <p-sortIcon field="email"></p-sortIcon>
+        </th>
+        <th pSortableColumn="admin">admin <p-sortIcon field="admin"></p-sortIcon>
+        </th>
+
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>{{user.value.nickname}}</td>
+        <td>{{user.value.email}}</td>
+        <td>{{user.value.admin}}</td>
+
+        <td>
+          <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
+            (click)="edit(user)"></button>
+          <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+            (click)="delet(user)"></button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="flex align-items-center justify-content-between">
+        In total there are {{users ? users.length : 0 }} users.
+      </div>
+    </ng-template>
+  </p-table>
+</div>
+
+<p-dialog header="Godfather I" *ngIf="userDialog" [(visible)]="userDialog" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+  [resizable]="false">
+<app-cuuser  [Numpi]="Numpi" [item]="user"></app-cuuser>
+</p-dialog>

@@ -1,0 +1,22 @@
+<div class="min-h-screen flex flex-column">
+  <div class="bg-green-500" style="height: 250px;">
+    <app-navigationlogin *ngIf="!login"></app-navigationlogin>
+    <app-navigation-user *ngIf="login"></app-navigation-user>
+    <ul
+      class="list-none text-lg py-3 px-5 m-0 flex align-items-center font-medium overflow-x-auto border-top-1 border-green-600">
+      <li class="pr-3"><a class="cursor-pointer no-underline" routerLink="/Landing"><i
+            class="pi pi-home text-green-50"></i></a></li>
+      <li class="px-2"><i class="pi pi-angle-right text-green-50"></i></li>
+      <li class="px-2 "><a class="cursor-pointer text-green-50 white-space-nowrap no-underline"
+          routerLink="/Application/Main/Region">region</a></li>
+    </ul>
+
+  </div>
+
+  <div class="p-3 flex flex-column flex-auto" style="margin-top: -8.5rem;">
+    <div class="border-2  surface-border border-round surface-section flex-auto">
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="card">
+  <p-toolbar styleClass="mb-4">
+    <ng-template pTemplate="left">
+      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button>
+    </ng-template>
+
+    <ng-template pTemplate="right">
+      <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import"
+        class="mr-2 inline-block"></p-fileUpload>
+      <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
+    </ng-template>
+  </p-toolbar>
+
+  <p-table #dt [value]="payes" [rows]="10" [paginator]="true"
+    [globalFilterFields]="['value.name_paye_ar','value.name_paye_fr']" responsiveLayout="scroll"
+    [(selection)]="selectedpayes" [rowHover]="true" dataKey="id"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+    <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+        <h5 class="m-0">Manage payes</h5>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+            placeholder="Search..." />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+
+
+        <th pSortableColumn="namear">name arabic <p-sortIcon field="namear"></p-sortIcon>
+        </th>
+        <th pSortableColumn="namefr">name fr <p-sortIcon field="namefr"></p-sortIcon>
+        </th>
+
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-paye>
+      <tr>
+
+        <td>{{paye.value.name_paye_ar}}</td>
+        <td>{{paye.value.name_paye_fr}}</td>
+        <td>
+          <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"
+            (click)="edit(paye)"></button>
+          <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
+            (click)="delet(paye.key)"></button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="flex align-items-center justify-content-between">
+        In total there are {{payes ? payes.length : 0 }} payes.
+      </div>
+    </ng-template>
+  </p-table>
+</div>
+
+<p-dialog header="Godfather I"  *ngIf="payeDialog" [(visible)]="payeDialog" [modal]="true" [style]="{width: '50vw'}"
+  [draggable]="false" [resizable]="false">
+<app-cupayes  [Numpi]="Numpi" [item]="paye"></app-cupayes>
+</p-dialog>

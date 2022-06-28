@@ -1,0 +1,32 @@
+<div class="grid formgrid p-fluid">
+  <div class="field mb-4 col-12"><label for="city" class="font-medium text-900">City</label>
+    <div id="background-img-avatar"  style="background-image: url({{!image1?itemimage1:image1|async}});">
+    </div>
+    <p-fileUpload #fubauto mode="basic" accept=".png, .jpg, .jpeg" (change)="onimage1($event)"  accept="image/*"   [auto]="true" chooseLabel="Browse"></p-fileUpload>
+  </div>
+  <div class="field mb-4 col-12 "><label for="username" class="font-medium text-900">username</label>
+    <input [(ngModel)]="nickname" id="username" type="text" pinputtext="" class="p-inputtext p-component p-element">
+  </div>
+  <div class="field mb-4 col-12 md:col-6"><label for="email" class="font-medium text-900">email</label>
+    <input [(ngModel)]="email" id="email" type="text" pinputtext="" class="p-inputtext p-component p-element">
+  </div>
+  <div class="field mb-4 col-12 md:col-6"><label for="pass" class="font-medium text-900">password</label>
+    <input [(ngModel)]="pass" id="pass" type="text" pinputtext="" class="p-inputtext p-component p-element">
+  </div>
+</div>
+<div class="field mb-4 col-12 md:col-6"><label for="state" class="font-medium text-900">city</label>
+  <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name"></p-dropdown>
+</div>
+<div class="col-12">
+  <button (click)="update()" *ngIf="Numpi" pbutton="" pripple="" label="Save Changes"
+    class="p-element p-ripple w-auto mt-3 p-button p-component">
+    <span class="p-button-label">update</span>
+    <span class="p-ink" style="height: 154px; width: 154px; top: -59px; left: -19.2px;"></span>
+    </button>
+  <button (click)="addusers()" *ngIf="!Numpi" pbutton="" pripple="" label="Save Changes"
+    class="p-element p-ripple w-auto mt-3 p-button p-component">
+    <span class="p-button-label">add</span>
+    <span class="p-ink" style="height: 154px; width: 154px; top: -59px; left: -19.2px;">
+    </span>
+  </button>
+</div>

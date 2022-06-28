@@ -1,0 +1,34 @@
+<div class="surface-section px-4 py-4 md:px-6 lg:px-8">
+
+  <p-tabMenu [model]="items" [activeItem]="items[0]">
+
+    <ng-template pTemplate="item" let-item let-i="index">
+        <a role="presentation" pripple="" (click)="onclickstatut(item.label)" class="" tabindex="0">
+
+          <span class="p-menuitem-text ng-star-inserted">{{item.label}}</span>
+        </a>
+    </ng-template>
+
+  </p-tabMenu>
+
+</div>
+
+
+
+<div>
+  <div class="grid">
+    <div class="col-12  md:col-7 ">
+      <p-scrollPanel [style]="{width: '100%', height: '100vh'}">
+
+        <app-listpharmacie [Zone]=Zone [statut]=statut></app-listpharmacie>
+        <p-scrollTop target="parent" styleClass="custom-scrolltop" [threshold]="100" icon="pi pi-arrow-up">
+        </p-scrollTop>
+      </p-scrollPanel>
+
+    </div>
+    <div class="col-12 md:col-5">
+
+      <app-maps *ngIf="validation" [locations]=locations></app-maps>
+    </div>
+  </div>
+</div>

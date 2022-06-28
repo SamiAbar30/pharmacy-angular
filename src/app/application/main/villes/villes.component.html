@@ -1,0 +1,24 @@
+<div class="block-content">
+  <div class="ng-star-inserted">
+    <div class="surface-section text-800 px-4 py-6 md:px-6">
+      <div class="grid">
+        <div class="w-full lg:w-6 pr-0 ">
+          <img src="assets/images/illustrations/undraw_choose_re_7d5a.svg" alt="Image" class="w-full border-round">
+          <div class="text-center text-sm font-medium mt-3">Consequat nisl vel pretium lectus quam id leo in.</div>
+        </div>
+        <div class="w-full lg:w-6 pl-0  pt-5" style="z-index: 1;">
+          <p-accordion class="p-element">
+            <div role="tablist" class="p-accordion p-component">
+              <p-accordionTab header="{{Ville.value.name_ville_fr}}" class="p-element ng-star-inserted"
+                *ngFor="let Ville of Villes">
+                <app-zone [id]="Ville.key"></app-zone>
+              </p-accordionTab>
+            </div>
+          </p-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!---->
+  <!---->
+</div>

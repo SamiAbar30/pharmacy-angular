@@ -1,0 +1,233 @@
+<div class="ng-star-inserted">
+  <app-navigationlogin *ngIf="!login"></app-navigationlogin>
+  <app-navigation-user *ngIf="login"></app-navigation-user>
+  <div class="bg-gray-900 elementor ">
+    <div class="w-full h-full px-4 py-8 md:px-6 lg:px-8 " style="background-color: rgb(0, 0, 0,0.5);">
+      <div class="flex flex-wrap">
+        <div class="w-12 lg:w-6 p-4">
+          <h1 class="text-6xl font-bold text-white mt-0 mb-3">Trouvez la pharmacie de garde
+            la plus proche de chez vous !
+            </h1>
+          <p class="text-3xl text-gray-400 mt-0 mb-5">Pharmaloca où les citoyens marocains peuvent facilement, rapidement et gratuitement trouver la pharmacie de garde la plus proche de chez eux depuis 2020.</p>
+          <ul class="list-none p-0 m-0">
+            <li class="mb-3 flex align-items-center"><i class="pi pi-compass text-yellow-500 text-xl mr-2"></i><span
+                class="text-gray-400 line-height-3">Senectus et netus et malesuada fames.</span></li>
+            <li class="mb-3 flex align-items-center"><i class="pi pi-map text-yellow-500 text-xl mr-2"></i><span
+                class="text-gray-400 line-height-3">Orci a scelerisque purus semper eget.</span></li>
+            <li class="mb-3 flex align-items-center"><i class="pi pi-calendar text-yellow-500 text-xl mr-2"></i><span
+                class="text-gray-400 line-height-3">Aenean sed adipiscing diam donec adipiscing tristique.</span></li>
+          </ul>
+          <button type="button" pbutton="" pripple="" label="Voir La Liste" routerLink="/Application/Main/Region"
+            class="p-element p-ripple inline mt-7 mb-7 lg:mb-0 p-button-rounded p-button-success p-button-lg font-medium p-button p-component"><span
+              class="p-button-label">Voir La Liste</span><span class="p-ink"></span>
+          </button>
+          <div class="field mb-7 col-6 inline">
+
+            <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true"
+              filterBy="name" [showClear]="true" placeholder="Select a Country">
+
+              <ng-template let-country pTemplate="item">
+                <div class="country-item">
+                  <img [src]="country.image" style=" width: 30px;height: 20px; display: inline-block;"/>
+                  <div style=" display: inline-block;padding: 5px;">{{country.name}}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+    <div class="font-bold text-900 text-3xl mb-3 text-center">Comment trouver une pharmacie de garde près de soi ?</div>
+    <div class="text-700 text-center mb-3 text-lg">4 étapes rapides et faciles pour trouver une pharmacie de garde près de soi aujourd'hui.</div>
+    <div class="flex flex-wrap">
+      <div class="w-full lg:w-6 xl:w-3 p-5"><img
+          src="https://www.primefaces.org/primeblocks-ng/assets/images/blocks/feature/feature-illustration-2.svg"
+          alt="Image" class="w-full">
+        <div class="mt-3 mb-2 font-medium text-900 text-xl">Choisissez la ville</div>
+        <span class="text-700 line-height-3">Rendez-vous sur Pharmaloca à l’aide de votre navigateur sur ordinateur, tablette ou smartphone, puis choisissez votre ville parmi plus de 20 villes marocaines pour passer à l’étape 2.</span>
+        <a tabindex="0"  class="text-blue-500 font-medium flex align-items-center mt-2">
+          <span>Explore</span>
+          <i class="pi pi-arrow-right ml-3"></i>
+        </a>
+      </div>
+      <div class="w-full lg:w-6 xl:w-3 p-5"><img
+          src="https://www.primefaces.org/primeblocks-ng/assets/images/blocks/feature/feature-illustration-4.svg"
+          alt="Image" class="w-full">
+        <div class="mt-3 mb-2 font-medium text-900 text-xl">Choisissez le quartier</div><span
+          class="text-700 line-height-3">Après avoir choisi votre ville, vous accéderez directement à la liste des pharmacies disponibles en semaine dans tous les quartiers. Sélectionnez votre quartier pour trouver les pharmacies les plus proches.</span><a tabindex="0"
+          class="text-blue-500 font-medium flex align-items-center mt-2"><span>Explore</span><i
+            class="pi pi-arrow-right ml-3"></i></a>
+      </div>
+      <div class="w-full lg:w-6 xl:w-3 p-5"><img
+          src="https://www.primefaces.org/primeblocks-ng/assets/images/blocks/feature/feature-illustration-1.svg"
+          alt="Image" class="w-full">
+        <div class="mt-3 mb-2 font-medium text-900 text-xl">Choisissez la pharmacie</div><span
+          class="text-700 line-height-3">Votre choix de la pharmacie de garde est lié à votre horaire actuel, vous pouvez en choisir une qui est ouverte 24 heures sur 24 ou qui n’est ouverte que le jour ou la nuit. Après votre sélection, cliquez sur “Direction”.</span><a tabindex="0"
+          class="text-blue-500 font-medium flex align-items-center mt-2"><span>Explore</span><i
+            class="pi pi-arrow-right ml-3"></i></a>
+      </div>
+      <div class="w-full lg:w-6 xl:w-3 p-5"><img
+          src="https://www.primefaces.org/primeblocks-ng/assets/images/blocks/feature/feature-illustration-3.svg"
+          alt="Image" class="w-full">
+        <div class="mt-3 mb-2 font-medium text-900 text-xl">Cliquez sur Direction</div><span
+          class="text-700 line-height-3">Attendez environ 10 secs pour traiter votre demande sur GMaps, où vous serez dirigé vers la pharmacie que vous avez sélectionnée plus tôt via un chemin court et rapide depuis votre emplacement actuel.</span><a tabindex="0"
+          class="text-blue-500 font-medium flex align-items-center mt-2"><span>Explore</span><i
+            class="pi pi-arrow-right ml-3"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="bg-gray-900 p-8 flex justify-content-center md:justify-content-end bg-no-repeat bg-cover md:bg-contain"
+    style="background-image: url('https://demo.moxcreative.com/medipharma/wp-content/uploads/sites/74/2021/10/beautiful-young-woman-pharmacist-showing-drugs-to-senior-man-customer-in-pharmacy-.jpg');">
+
+    <div class="px-5">
+      <div class="text-white font-bold text-6xl">Pharmacie de garde</div>
+      <div class="text-blue-200 font-bold text-6xl">Maroc</div>
+      <div class="mt-3 mb-5 text-gray-200 font-medium line-height-3 ">Trouvez une pharmacie de garde près de chez vous en choisissant
+        la ville appropriée dans la liste ci-dessous. </div>
+        <button pbutton="" pripple="" label="Get Started"
+        class="p-element p-ripple font-bold px-5 py-3 p-button p-component"><span class="p-button-label">Get
+          Started</span><span class="p-ink"></span></button>
+    </div>
+
+  </div>
+  <div class="elementor-background"></div>
+  <div class="surface-section px-4 py-8 md:px-6 lg:px-8 ">
+    <div class="flex flex-wrap ">
+
+      <div class="col-12 md:col-6 md:pl-6">
+        <div class="p-3 inline-flex align-items-center surface-900 text-0 mb-4 font-medium"
+          style="border-radius: 30px;"><i class="pi pi-star-fill mr-2"></i><span>Open Source</span></div>
+        <div class="text-4xl font-bold text-900 mb-3">Avantages d'utiliser Pharmaloca</div>
+        <div class="text-700 mb-5 line-height-3 mb-5 text-lg">Gagnez du temps, économisez de l'argent et sauvez des vies</div>
+        <div class="flex  align-items-center mb-4">
+          <i class="pi pi-check text-green-600 mr-3"></i>
+          <div>
+            <div class="text-900 font-medium mb-2 text-lg">Gagnez du Temps</div>
+            <div class="text-700 text-lg">Économisez jusqu'à 90% du temps que vous passez à chercher une pharmacie de garde, en utilisant notre outil de recherche en mois d’une minute.</div>
+          </div>
+        </div>
+        <div class="flex align-items-center mb-4"><i class="pi pi-check text-green-600 mr-3"></i>
+          <div>
+            <div class="text-900 font-medium mb-2 text-lg">Economisez de l'Argent</div>
+            <div class="text-700 text-lg">Notre outil déterminer votre localisation et afficher la liste des pharmacies de garde près de chez vous, ce qui vous fera économiser sur les frais de transport.</div>
+          </div>
+        </div>
+        <div class="flex align-items-center mb-4"><i class="pi pi-check text-green-600 mr-3"></i>
+          <div>
+            <div class="text-900 font-medium mb-2 text-lg">Sauvez des Vies</div>
+            <div class="text-700 text-lg">Comme c'est le cas avec les pharmacies de garde, elles sont là pour les cas d'urgence et pour éviter les pertes de vie. Nous faisons de même, en vous aider à sauver celui que vous aimez.</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="w-full lg:w-6 pl-0 lg:pl-5 pt-5"><img
+          src="assets/images/bg_landinpage/pharmacy-store-or-drugstore-exterior-design--e1634044444549.jpg" alt="Image"
+          class="w-full border-round">
+
+      </div>
+    </div>
+  </div>
+  <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+    <div class="grid grid-nogutter">
+      <div class="col-12 md:col-6 lg:col-3 p-3">
+        <div class="bg-blue-50 text-center p-5 border-round flex flex-column">
+          <i  class="text-blue-500 pi pi-home text-4xl block mb-4"></i>
+          <span class="text-900 text-5xl">20+</span>
+          <div class="text-blue-700 mt-3 font-medium">Ville couverte</div>
+        </div>
+      </div>
+      <div class="col-12 md:col-6 lg:col-3 p-3">
+        <div class="bg-purple-50 text-center p-5 border-round flex flex-column">
+          <i class="text-purple-500 pi pi-map-marker text-4xl block mb-4"></i>
+            <span class="text-900 text-5xl">200+</span>
+          <div class="text-purple-700 mt-3 font-medium">Pharmacie de garde</div>
+        </div>
+      </div>
+      <div class="col-12 md:col-6 lg:col-3 p-3">
+        <div class="bg-teal-50 text-center p-5 border-round flex flex-column">
+          <i class="text-teal-500 pi pi-clock text-4xl block mb-4"></i>
+          <span class="text-900 text-5xl">65+</span>
+          <div class="text-teal-700 mt-3 font-medium">Ouverte 24h/24</div>
+        </div>
+      </div>
+      <div class="col-12 md:col-6 lg:col-3 p-3">
+        <div class="bg-indigo-50 text-center p-5 border-round flex flex-column">
+          <i class="text-indigo-500 pi pi-user text-4xl block mb-4"></i>
+          <span class="text-900 text-5xl">100K+</span>
+          <div class="text-indigo-700 mt-3 font-medium">Utilisateur satisfait</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="surface-ground">
+    <div class="grid grid-nogutter">
+      <div class="col-12 md:col-6 bg-no-repeat bg-cover p-8"
+        style="background-image: url('assets/images/blocks/contact/contact-2.jpg');">
+        <div class="text-white text-2xl font-medium mb-6">Contact Us</div>
+        <div class="text-gray-300 line-height-3 mb-6">40 RUE EL BAZ ETAGE 02 LOT IMNWADAY G BERRECHID</div><a
+          class="inline-flex align-items-center text-blue-300 font-bold no-underline cursor-pointer"><span
+            class="mr-3">View Address on Google Maps</span><i class="pi pi-arrow-right"></i></a>
+        <ul class="list-none p-0 m-0 mt-6 text-white">
+          <li class="flex align-items-center mb-3"><i class="pi pi-phone mr-2"></i><span>(+212) 6 32 20 29 62</span></li>
+          <li class="flex align-items-center mb-3"><i class="pi pi-twitter mr-2"></i><span>@prime_ng</span></li>
+          <li class="flex align-items-center"><i class="pi pi-inbox mr-2"></i><span>samiabar30@gmail.com</span></li>
+        </ul>
+      </div>
+      <div class="col-12 md:col-6">
+        <div class="p-fluid formgrid grid px-4 py-8 md:px-6 lg:px-8 ">
+          <div class="field col-12 lg:col-6 p-float-label mb-4"><input id="firstname" type="text" pinputtext=""
+              placeholder="First Name" class="p-inputtext p-component p-element py-3 px-2 text-lg"></div>
+          <div class="field col-12 lg:col-6 p-float-label mb-4"><input id="lastname" type="text" pinputtext=""
+              placeholder="Last Name" class="p-inputtext p-component p-element py-3 px-2 text-lg"></div>
+          <div class="field col-12 mb-4"><input id="email" type="text" pinputtext="" placeholder="Email"
+              class="p-inputtext p-component p-element py-3 px-2 text-lg"></div>
+          <div class="field col-12 mb-4"><input id="email" type="text" pinputtext="" placeholder="Phone"
+              class="p-inputtext p-component p-element py-3 px-2 text-lg"></div>
+          <div class="field col-12 mb-4"><textarea id="message" pinputtextarea="" rows="3" placeholder="Message"
+              class="p-inputtextarea p-inputtext p-component p-element py-3 px-2 text-lg p-inputtextarea-resizable"
+              style="height: 95px; overflow: hidden;"></textarea></div>
+          <div class="col-12 text-right"><button type="button" pbutton="" pripple="" label="Submit"
+              icon="pi pi-envelope"
+              class="p-ripple p-element px-5 py-3 w-auto p-button p-component background-bouton-green"><span
+                class="p-ink"></span><span class="p-button-icon p-button-icon-left pi pi-envelope"
+                aria-hidden="true"></span><span class="p-button-label">Submit</span></button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="background-blue px-4 py-8 md:px-6 lg:px-8">
+    <div class="background-blue  elementor-background-overlay ">
+
+      <div class="grid">
+        <div class="col-12 md:col-3 flex flex-wrap justify-content-start md:mb-0 mb-3"><img
+            src="assets/images/blocks/footer/footer-2.png" alt="footer sections" width="50" height="50" class="mr-3">
+          <div class="text-gray-300 font-bold text-5xl">Bastion</div>
+        </div>
+        <div class="col-12 md:col-3">
+          <div class="text-white text-lg mb-4 flex flex-wrap" style="max-width: 290px;">40 RUE EL BAZ ETAGE 02 LOT IMNWADAY G BERRECHID</div>
+          <div class="text-white mb-3"><i class="pi pi-phone surface-800 border-round p-1 mr-2"></i>(+212) 6 32 20 29 62
+          </div>
+          <div class="text-white mb-3"><i class="pi pi-inbox surface-800 border-round p-1 mr-2"></i>samiabar30@gmail.com
+          </div>
+        </div>
+        <div class="col-12 md:col-3 text-gray-200">
+          <div class="text-white font-bold line-height-3 mb-3">Company</div><a
+            class="line-height-3 block cursor-pointer mb-2">About Us</a><a
+            class="line-height-3 block cursor-pointer mb-2">News</a><a
+            class="line-height-3 block cursor-pointer mb-2">Investor Relations</a><a
+            class="line-height-3 block cursor-pointer mb-2">Careers</a><a
+            class="line-height-3 block cursor-pointer">Media Kit</a>
+        </div>
+        <div class="col-12 md:col-3 text-gray-200">
+          <div class="text-white font-bold line-height-3 mb-3">Resourses</div><a
+            class="line-height-3 block cursor-pointer mb-2">Get Started</a><a
+            class="line-height-3 block cursor-pointer mb-2">Learn</a><a class="line-height-3 block cursor-pointer">Case
+            Studies</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

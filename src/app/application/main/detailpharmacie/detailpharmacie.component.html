@@ -1,0 +1,74 @@
+<div class="surface-section px-2 py-4 md:px-6 lg:px-4 ">
+
+  <div class="flex flex-wrap">
+
+    <div class="w-full lg:w-6 pr-0 lg:pr-5">
+
+      <div class="surface-card border-round shadow-2 p-4">
+        <div>
+          <div class="text-green-700 text-2xl mb-3 ">Detail Pharmacies</div>
+          <div class="text-900 text-4xl font-bold mb-6">{{detail.name_pharmacie}}</div>
+          <div class="grid">
+            <div class="col-12  flex align-items-center justify-content-center"><img
+              src="{{detail.img_pharmacie}}" alt="Image"
+                class="w-full md:w-9 ng-star-inserted">
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="col-12 md:col-6">
+              <div class="text-900 text-xl font-medium mb-2">N° Téléphone</div>
+              <div class="text-700 text-lg mb-3 line-height-3">{{detail.tel_pharmacie}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="text-900 font-medium mb-3 text-xl">Adresse</div>
+        <p class="mt-0 mb-4 p-0 line-height-3">{{detail.adresse_pharmacie}}</p>
+        <div class="flex mb-4 flex-column lg:flex-row">
+          <div class="surface-50 p-3 flex-auto">
+            <div class="text-green-600 text-lg mb-3">Garde de Jour</div>
+            <img *ngIf="'GARDE DE JOUR'==detail.staut_pharmacie" src="assets/icons/check-circle-solid.svg" style="width: 25px;height: 25px;">
+
+          </div>
+          <div class="surface-50 p-3 flex-auto mx-0 my-3 lg:my-0 lg:mx-3">
+            <div class=" text-green-600 text-lg mb-3">Garde de Nuit</div>
+            <img *ngIf="'Garde de Nuit'==detail.staut_pharmacie" src="assets/icons/check-circle-solid.svg" style="width: 25px;height: 25px;">
+
+          </div>
+          <div class="surface-50 p-3 flex-auto">
+            <div class=" text-green-600 text-lg mb-3">Garde 24/24</div>
+              <img *ngIf="'Garde 24/24'==detail.staut_pharmacie" src="assets/icons/check-circle-solid.svg" style="width: 25px;height: 25px;">
+
+          </div>
+          <div class="surface-50 p-3 flex-auto">
+            <div class=" text-green-600 text-lg mb-3">Date Début</div><span
+              class=" font-medium text-xl">{{detail.Date_Debut_pharmacie}}</span>
+          </div>
+          <div class="surface-50 p-3 flex-auto">
+            <div class=" text-green-600 text-lg mb-3">Date Fin</div><span
+              class=" font-medium text-xl">{{detail.Date_Fin_pharmacie}}</span>
+          </div>
+        </div>
+        <button pbutton="" pripple="" label="Save Changes" class="p-element p-ripple p-button p-component">
+
+          <a style="text-decoration: none; color: white;"
+            href="https://www.google.com/maps/dir//7C9G%2B95X+Pharmacie+Hay+Hassani,+Berrchid/@33.2634885,-7.5789081,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0xda63cf1436c1d0f:0xa8090469434010f2!2m2!1d-7.574516!2d33.2684316"
+            target="_blank">
+            <span class="p-button-label">Save Changes</span>
+            <span class="p-ink">
+            </span>
+          </a>
+        </button>
+
+      </div>
+    </div>
+
+    <div class="w-full  lg:w-6 pr-0  h-screen ">
+      <app-maps *ngIf="validation" [locations]=locations></app-maps>
+      <div class="text-center text-sm font-medium mt-3">Consequat nisl vel pretium lectus quam id leo in.</div>
+    </div>
+
+
+  </div>
+
+</div>

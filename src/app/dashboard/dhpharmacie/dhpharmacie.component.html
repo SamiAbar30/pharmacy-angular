@@ -1,0 +1,94 @@
+<div class="card">
+  <p-toolbar styleClass="mb-4">
+    <ng-template pTemplate="left">
+      <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button>
+   </ng-template>
+
+    <ng-template pTemplate="right">
+      <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import"
+        class="mr-2 inline-block"></p-fileUpload>
+      <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
+    </ng-template>
+  </p-toolbar>
+
+  <p-table #dt [value]="pharmacies" [rows]="10" [paginator]="true" [globalFilterFields]="['value.Date_Debut_pharmacie','value.Date_Fin_pharmacie','value.adresse_pharmacie','value.latitude_pharmacie','value.longitude_pharmacie','value.name_pharmacie',
+    'value.stars','value.staut_pharmacie','value.tel_pharmacie']" responsiveLayout="scroll"
+    [(selection)]="selectedpharmacies" [rowHover]="true" dataKey="id"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+    <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+        <h5 class="m-0">Manage pharmacies</h5>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+            placeholder="Search..." />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+
+        <th pSortableColumn="Date_Debut_pharmacie">Date Debut
+          <p-sortIcon field="Date_Debut_pharmacie"></p-sortIcon>
+        </th>
+        <th pSortableColumn="Date_Fin_pharmacie">Date_Fin
+          <p-sortIcon field="Date_Fin_pharmacie"></p-sortIcon>
+        </th>
+        <th pSortableColumn="adresse_pharmacie">adresse
+          <p-sortIcon field="adresse_pharmacie"></p-sortIcon>
+        </th>
+        <th pSortableColumn="latitude_pharmacie">latitude
+          <p-sortIcon field="latitude_pharmacie"></p-sortIcon>
+        </th>
+        <th pSortableColumn="longitude_pharmacie">longitude
+          <p-sortIcon field="longitude_pharmacie"></p-sortIcon>
+        </th>
+        <th pSortableColumn="name_pharmacie">name
+          <p-sortIcon field="name_pharmacie"></p-sortIcon>
+        </th>
+        <th pSortableColumn="stars">stars
+          <p-sortIcon field="stars"></p-sortIcon>
+        </th>
+        <th pSortableColumn="staut_pharmacie">staut
+          <p-sortIcon field="staut_pharmacie"></p-sortIcon>
+        </th>
+        <th pSortableColumn="tel_pharmacie">tel
+          <p-sortIcon field="tel_pharmacie"></p-sortIcon>
+        </th>
+
+
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-pharmacie>
+      <tr>
+
+        <td>{{pharmacie.value.Date_Debut_pharmacie}}</td>
+        <td>{{pharmacie.value.Date_Fin_pharmacie}}</td>
+        <td>{{pharmacie.value.adresse_pharmacie}}</td>
+        <td>{{pharmacie.value.latitude_pharmacie}}</td>
+        <td>{{pharmacie.value.longitude_pharmacie}}</td>
+        <td>{{pharmacie.value.name_pharmacie}}</td>
+        <td>{{pharmacie.value.stars}}</td>
+        <td>{{pharmacie.value.staut_pharmacie}}</td>
+        <td>{{pharmacie.value.tel_pharmacie}}</td>
+        <td>
+          <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"
+            (click)="edit(pharmacie)"></button>
+          <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
+            (click)="delet(pharmacie.key)"></button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="flex align-items-center justify-content-between">
+        In total there are {{pharmacies ? pharmacies.length : 0 }} pharmacies.
+      </div>
+    </ng-template>
+  </p-table>
+</div>
+<p-dialog header="Godfather I" *ngIf="pharmacieDialog" [(visible)]="pharmacieDialog" [modal]="true" [style]="{width: '50vw'}"
+  [draggable]="false" [resizable]="false">
+  <app-cupharmacie  [Numpi]="Numpi" [item]="pharmacie"></app-cupharmacie>
+
+</p-dialog>

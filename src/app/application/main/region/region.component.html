@@ -1,0 +1,29 @@
+<div class="block-content">
+  <div class="lg:px-8 md:px-6 px-4 py-8 surface-ground ng-star-inserted">
+    <div class="surface-ground">
+      <div class="grid">
+        <div class="col-12 md:col-6 xl:col-3 p-3 border-rounded " *ngFor="let  reg of region">
+          <div class="surface-card shadow-2 border-rounded p-4">
+            <div class="flex flex-column align-items-center mb-3">
+              <img src="{{reg.value.img_region}}" class="mb-3 w-9">
+              <span class="font-medium text-900 text-xl mb-3">{{reg.value.name_region_fr}}</span>
+              <span class="text-600  bg-green-600 text-gray-50 p-2 border-round">Morocco</span>
+            </div>
+            <div class="pt-3 border-top-1 surface-border flex">
+              <button pbutton="" pripple="" type="button" icon="pi pi-search"
+                [routerLink]="['/Application/Main/Villes', reg.key]"
+                class="p-element p-ripple flex-auto ml-2 p-button-outlined p-button-plain p-button p-component p-button-icon-only hover:bg-green-500"
+                style="border-radius: 30px;">
+                <span class="p-button-icon pi pi-search" aria-hidden="true"></span>
+                <span aria-hidden="true" class="p-button-label">&nbsp;</span>
+                <span class="p-ink"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!---->
+  <!---->
+</div>

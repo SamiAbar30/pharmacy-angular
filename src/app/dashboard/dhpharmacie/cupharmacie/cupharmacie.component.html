@@ -1,0 +1,54 @@
+<div class="grid formgrid p-fluid">
+  <div class="field mb-4 col-12"><label for="city" class="font-medium text-900">City</label>
+    <div id="background-img-avatar" style="background-image: url({{!image1?itemimage1:image1|async}});">
+    </div>
+    <input type='file' id="imageUpload1" accept=".png, .jpg, .jpeg" (change)="onimage1($event)" />
+  </div>
+  <div class="field mb-4 col-12 md:col-6"><label for="name_pharmacie"
+      class="font-medium text-900">name_pharmacie</label><input [(ngModel)]="name_pharmacie" id="name_pharmacie"
+      type="text" pinputtext="" class="p-inputtext p-component p-element"></div>
+  <div class="field mb-4 col-12 md:col-6"><label for="adresse_pharmacie"
+      class="font-medium text-900">adresse_pharmacie</label><input [(ngModel)]="adresse_pharmacie"
+      id="adresse_pharmacie" type="text" pinputtext="" class="p-inputtext p-component p-element"></div>
+  <div class="field mb-4 col-12 md:col-6"><label for="tel_pharmacie"
+      class="font-medium text-900">tel_pharmacie</label><input [(ngModel)]="tel_pharmacie" id="tel_pharmacie"
+      type="text" pinputtext="" class="p-inputtext p-component p-element"></div>
+  <div class="field mb-4 col-12 md:col-6"><label for="latitude_pharmacie"
+      class="font-medium text-900">latitude_pharmacie</label><input [(ngModel)]="latitude_pharmacie"
+      id="latitude_pharmacie" type="text" pinputtext="" class="p-inputtext p-component p-element"></div>
+
+  <div class="field mb-4 col-12 md:col-6"><label for="longitude_pharmacie"
+      class="font-medium text-900">longitude_pharmacie</label><input [(ngModel)]="longitude_pharmacie"
+      id="longitude_pharmacie" type="text" pinputtext="" class="p-inputtext p-component p-element"></div>
+  <div class="field mb-4 col-12 md:col-6"><label for="staut_pharmacie"
+      class="font-medium text-900">staut_pharmacie</label><input [(ngModel)]="staut_pharmacie" id="staut_pharmacie"
+      type="text" pinputtext="" class="p-inputtext p-component p-element"></div>
+
+  <div class="field mb-4 col-12 "><label for="Date_Debut_pharmacie"
+      class="font-medium text-900">Date_Debut_pharmacie</label>
+    <p-calendar [(ngModel)]="Date_Debut_pharmacie"></p-calendar>
+
+  </div>
+  <div class="field mb-4 col-12 "><label for="Date_Fin_pharmacie"
+      class="font-medium text-900">Date_Fin_pharmacie</label>
+    <p-calendar [(ngModel)]="Date_Fin_pharmacie"></p-calendar>
+
+  </div>
+
+  <div class="field mb-4 col-12 md:col-6"><label for="stars" class="font-medium text-900">stars</label><input
+      [(ngModel)]="stars" id="stars" type="text" pinputtext="" class="p-inputtext p-component p-element"></div>
+
+  <div class="field mb-4 col-12 md:col-6"><label for="state" class="font-medium text-900">zone</label>
+    <p-dropdown [options]="zone" [(ngModel)]="selectedCity" optionLabel="value.name_zone_fr"></p-dropdown>
+  </div>
+
+
+</div>
+<div class="col-12"><button (click)="addpharmacies()" *ngIf="!Numpi" pbutton="" pripple="" label="Save Changes"
+    class="p-element p-ripple w-auto mt-3 p-button p-component"><span class="p-button-label">add</span><span
+      class="p-ink" style="height: 154px; width: 154px; top: -59px; left: -19.2px;"></span></button>
+
+  <button (click)="update()" *ngIf="Numpi" pbutton="" pripple="" label="Save Changes"
+    class="p-element p-ripple w-auto mt-3 p-button p-component"><span class="p-button-label">update</span><span
+      class="p-ink" style="height: 154px; width: 154px; top: -59px; left: -19.2px;"></span></button>
+</div>

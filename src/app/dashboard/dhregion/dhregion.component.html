@@ -1,0 +1,64 @@
+
+
+<div class="card">
+    <p-toolbar styleClass="mb-4">
+        <ng-template pTemplate="left">
+            <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button>
+       </ng-template>
+
+        <ng-template pTemplate="right">
+            <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="mr-2 inline-block"></p-fileUpload>
+            <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
+        </ng-template>
+    </p-toolbar>
+
+    <p-table #dt [value]="regions" [rows]="10" [paginator]="true"
+    [globalFilterFields]="['value.name_region_ar','value.name_region_fr']" responsiveLayout="scroll"
+    [(selection)]="selectedregions" [rowHover]="true" dataKey="id"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+    <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+        <h5 class="m-0">Manage regions</h5>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+            placeholder="Search..." />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+
+        <th pSortableColumn="namear">name arabic <p-sortIcon field="namear"></p-sortIcon>
+        </th>
+        <th pSortableColumn="namefr">name fr <p-sortIcon field="namefr"></p-sortIcon>
+        </th>
+
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-region>
+      <tr>
+
+        <td>{{region.value.name_region_ar}}</td>
+        <td>{{region.value.name_region_fr}}</td>
+        <td>
+          <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"
+            (click)="edit(region)"></button>
+          <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"
+            (click)="delet(region.key)"></button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="flex align-items-center justify-content-between">
+        In total there are {{regions ? regions.length : 0 }} regions.
+      </div>
+    </ng-template>
+  </p-table>
+</div>
+
+<p-dialog header="Godfather I" *ngIf="regionDialog" [(visible)]="regionDialog" [modal]="true" [style]="{width: '50vw'}"
+  [draggable]="false" [resizable]="false">
+  <app-curegion  [Numpi]="Numpi" [item]="region"></app-curegion>
+</p-dialog>
